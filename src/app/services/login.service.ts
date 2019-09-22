@@ -6,4 +6,10 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   constructor() { }
+
+  sendToFirebase(data) {
+    console.log(data);
+
+  }
+
 }
