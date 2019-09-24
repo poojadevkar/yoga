@@ -10,3 +10,7 @@ color:
 
 <br>
 <button (click)="submitLogin()">Submit</button>
+
+<li *ngFor="let item of items | async">
+    <pre>{{ item | json }}</pre>
+</li>

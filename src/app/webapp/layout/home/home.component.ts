@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,12 @@ export class HomeComponent implements OnInit {
     color: string
   };
 
-  constructor(private loginService: LoginService) { }
+  public items: Observable<any[]>;
+
+  constructor(private loginService: LoginService, db: AngularFirestore) {
+    this.items = db.collection('/names').valueChanges();
+
+  }
 
   ngOnInit() {
   }
@@ -33,7 +40,10 @@ export class HomeComponent implements OnInit {
       color: this.color
     };
 
-    this.loginService.sendToFirebase(this.MyData);
+    this.loginService.sendToFirebase(this.MyData).then(() => {
+      console.log('success');
+
+    });
   }
 
 }

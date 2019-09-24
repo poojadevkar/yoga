@@ -2,13 +2,13 @@ export const environment = {
   production: true,
   firebase:
   {
-    apiKey: 'AIzaSyCAvDunfTHZCdO2wf3qB_Xvs9ovjWh2vAM',
-    authDomain: 'yoga-d94fe.firebaseapp.com',
-    databaseURL: 'https://yoga-d94fe.firebaseio.com',
-    projectId: 'yoga-d94fe',
-    storageBucket: '',
-    messagingSenderId: '6858676702',
-    appId: '1:6858676702:web:30fef8aa9d22c1a4a2e54f'
-
+    apiKey: 'AIzaSyBUkW7FCD1t6kvAvDQYZMoBPj9RXKYxo2I',
+    authDomain: 'pdyoga.firebaseapp.com',
+    databaseURL: 'https://pdyoga.firebaseio.com',
+    projectId: 'pdyoga',
+    storageBucket: 'pdyoga.appspot.com',
+    messagingSenderId: '900906637522',
+    appId: '1:900906637522:web:8b72d3763dda7410fdb50b',
+    measurementId: 'G-FK6L9DEM1H'
   }
 };
