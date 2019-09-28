@@ -1,16 +1,16 @@
 <p>home works!</p>
 
 name:
-<input type="text" name="" id="" [(ngModel)]="name">
+<input type="text" name="" id="" [(ngModel)]="MyData.name">
 sirname:
-<input type="text" name="" id="" [(ngModel)]="sirname">
+<input type="text" name="" id="" [(ngModel)]="MyData.sirname">
 color:
-<input type="text" name="" id="" [(ngModel)]="color">
+<input type="text" name="" id="" [(ngModel)]="MyData.color">
 
 
 <br>
 <button (click)="submitLogin()">Submit</button>
 
-<li *ngFor="let item of items | async">
+<li *ngFor="let item of items">
     <pre>{{ item | json }}</pre>
 </li>

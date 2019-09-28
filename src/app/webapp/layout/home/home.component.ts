@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-home',
@@ -20,30 +21,30 @@ export class HomeComponent implements OnInit {
     color: string
   };
 
-  public items: Observable<any[]>;
+  public items: any;
 
   constructor(private loginService: LoginService, db: AngularFirestore) {
-    this.items = db.collection('/names').valueChanges();
-
+    db.collection('/names').valueChanges().subscribe(data => {
+      this.items = data;
+      console.log("TCL: HomeComponent -> constructor -> this.items", this.items)
+    });
   }
 
   ngOnInit() {
   }
 
   submitLogin() {
-
-    console.log('Pratik Output: HomeComponent -> submitLogin -> this.name', this.name);
-
     this.MyData = {
       name: this.name,
       sirname: this.sirname,
       color: this.color
     };
 
-    this.loginService.sendToFirebase(this.MyData).then(() => {
+    this.loginService.sendToFirebase(this.MyData).then(data => {
+    console.log("TCL: HomeComponent -> submitLogin -> data", data)
       console.log('success');
-
     });
+
   }
 
 }
