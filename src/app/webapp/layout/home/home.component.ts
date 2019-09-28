@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   constructor(private loginService: LoginService, db: AngularFirestore) {
     db.collection('/names').valueChanges().subscribe(data => {
       this.items = data;
-      console.log("TCL: HomeComponent -> constructor -> this.items", this.items)
+      console.log('TCL: HomeComponent -> constructor -> this.items', this.items);
     });
   }
 
@@ -41,8 +41,7 @@ export class HomeComponent implements OnInit {
     };
 
     this.loginService.sendToFirebase(this.MyData).then(data => {
-    console.log("TCL: HomeComponent -> submitLogin -> data", data)
-      console.log('success');
+      console.log('TCL: HomeComponent -> submitLogin -> data', data);
     });
 
   }

@@ -1,14 +1,41 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Component, AfterViewInit, Renderer, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth.service';
+import { AccountService } from './account.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  url: string = 'https://pdyoga.firebaseio.com/';
+  url = 'https://pdyoga.firebaseio.com/';
+  authenticationError: boolean;
+  password: string;
+  rememberMe: boolean;
+  username: string;
+  credentials: any;
+  flag = false;
+  uid;
+  isPlan;
+  isPayment;
 
-  constructor(private http: HttpClient, private db: AngularFirestore) { }
+  PaymentArray: any = [];
+  route: any;
+  admin: any;
+  account: any;
+
+  constructor(
+    private http: HttpClient,
+    private db: AngularFirestore,
+    private renderer: Renderer,
+    private elementRef: ElementRef,
+    private router: Router,
+    private authService: AuthService,
+    private accountService: AccountService) {
+    this.credentials = {};
+  }
 
   sendToFirebase(data) {
     // const url = 'https://pdyoga.firebaseio.com/name.json';
@@ -27,5 +54,94 @@ export class LoginService {
     // return this.http.post(this.url + 'allnames/1.json', data)
 
   }
+
+
+  getUserid() {
+
+  }
+
+  CheckPlanSelected() {
+
+  }
+
+  CheckPayment() {
+
+  }
+
+  routing() {
+    const url = this.router.url;
+  }
+
+  login() {
+    this.credentials = {
+      username: this.username,
+      password: this.password,
+      rememberMe: this.rememberMe
+    };
+    this.authService.doEmailLogin(this.credentials)
+      .then(response => {
+        this.account = response;
+        this.authenticationError = false;
+        this.tellProject(this.account.user.uid);
+      })
+      .catch(error => {
+        this.authenticationError = true;
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else
+          if (errorCode === 'auth/invalid-email') {
+            alert('Wrong email.');
+          } else {
+            alert(errorMessage);
+          }
+      });
+  }
+
+  emailLogin() {
+    this.authService.doGoogleLogin()
+      .then(response => {
+        this.account = response;
+        this.authenticationError = false;
+        this.tellProject(this.account.user.uid);
+      })
+      .catch(error => {
+        this.authenticationError = true;
+      });
+  }
+
+  googleLogin() {
+    this.authService.doGoogleLogin()
+      .then(response => {
+        this.account = response;
+        this.authenticationError = false;
+        this.tellProject(this.account.user.uid);
+      })
+      .catch(error => {
+        this.authenticationError = true;
+      });
+  }
+
+  facebookLogin() {
+    alert('not available in this version please wait for next version');
+  }
+
+  linkedinLogin() {
+    alert('not available in this version please wait for next version');
+
+  }
+
+  twitterLogin() {
+    alert('not available in this version please wait for next version');
+
+  }
+
+  tellProject(uid) {
+    this.accountService.account.next(uid);
+  }
+
+
 
 }
