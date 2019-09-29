@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Component, AfterViewInit, Renderer, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { AccountService } from './account.service';
@@ -29,8 +28,6 @@ export class LoginService {
   constructor(
     private http: HttpClient,
     private db: AngularFirestore,
-    private renderer: Renderer,
-    private elementRef: ElementRef,
     private router: Router,
     private authService: AuthService,
     private accountService: AccountService) {
@@ -54,7 +51,6 @@ export class LoginService {
     // return this.http.post(this.url + 'allnames/1.json', data)
 
   }
-
 
   getUserid() {
 
@@ -113,35 +109,20 @@ export class LoginService {
   }
 
   googleLogin() {
-    this.authService.doGoogleLogin()
+    return this.authService.doGoogleLogin()
       .then(response => {
         this.account = response;
         this.authenticationError = false;
         this.tellProject(this.account.user.uid);
+        return this.account.user;
       })
       .catch(error => {
         this.authenticationError = true;
       });
   }
 
-  facebookLogin() {
-    alert('not available in this version please wait for next version');
-  }
-
-  linkedinLogin() {
-    alert('not available in this version please wait for next version');
-
-  }
-
-  twitterLogin() {
-    alert('not available in this version please wait for next version');
-
-  }
-
   tellProject(uid) {
     this.accountService.account.next(uid);
   }
-
-
 
 }

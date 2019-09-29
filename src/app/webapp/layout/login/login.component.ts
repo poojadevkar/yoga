@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     private elementRef: ElementRef,
     public activeModal: NgbActiveModal,
     private router: Router,
+    private loginService: LoginService
 
   ) {
     this.credentials = {};
@@ -45,6 +47,26 @@ export class LoginComponent implements OnInit, AfterViewInit {
   requestResetPassword() {
     this.activeModal.dismiss('to state requestReset');
     this.router.navigate(['/reset', 'request']);
+  }
+
+  googleLogin() {
+    this.loginService.googleLogin().then(data => {
+      console.log('Pratik Output: LoginComponent -> googleLogin -> data', data);
+      this.activeModal.dismiss('login success');
+      this.router.navigate(['main-home']);
+    });
+  }
+
+  facebookLogin() {
+    alert('not available in this version please wait for next version');
+  }
+
+  linkedinLogin() {
+    alert('not available in this version please wait for next version');
+  }
+
+  twitterLogin() {
+    alert('not available in this version please wait for next version');
   }
 
 }

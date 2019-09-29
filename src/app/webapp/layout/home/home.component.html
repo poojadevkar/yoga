@@ -1,15 +1,17 @@
-<p>home works!</p>
-
+<h1>yoga aasan</h1>
 name:
-<input type="text" name="" id="" [(ngModel)]="MyData.name">
+<input type="text" name="name" id="" [(ngModel)]="name">
 sirname:
-<input type="text" name="" id="" [(ngModel)]="MyData.sirname">
+<input type="text" name="" id="" [(ngModel)]="sirname">
 color:
-<input type="text" name="" id="" [(ngModel)]="MyData.color">
+<input type="text" name="" id="" [(ngModel)]="color">
 
 
 <br>
 <button (click)="submitLogin()">Submit</button>
+
+<button (click)="login()">Login</button>
+
 
 <li *ngFor="let item of items">
     <pre>{{ item | json }}</pre>

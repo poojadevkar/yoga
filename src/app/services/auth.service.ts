@@ -9,8 +9,7 @@ export class AuthService {
 
   constructor(
     public afAuth: AngularFireAuth
-  ) {
-  }
+  ) { }
 
   doRegister(value) {
     return new Promise<any>((resolve, reject) => {

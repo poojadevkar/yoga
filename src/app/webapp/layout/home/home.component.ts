@@ -3,6 +3,9 @@ import { LoginService } from 'src/app/services/login.service';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { LoginModalService } from 'src/app/services/login-modal.service';
 
 @Component({
   selector: 'app-home',
@@ -11,11 +14,13 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class HomeComponent implements OnInit {
 
+  modalRef: NgbModalRef;
+
   name: string;
   sirname: string;
   color: string;
 
-  MyData: {
+  public MyData: {
     name: string,
     sirname: string,
     color: string
@@ -23,7 +28,12 @@ export class HomeComponent implements OnInit {
 
   public items: any;
 
-  constructor(private loginService: LoginService, db: AngularFirestore) {
+  constructor(
+    private loginService: LoginService,
+    db: AngularFirestore,
+    private router: Router,
+    private loginModalService: LoginModalService,
+  ) {
     db.collection('/names').valueChanges().subscribe(data => {
       this.items = data;
       console.log('TCL: HomeComponent -> constructor -> this.items', this.items);
@@ -31,9 +41,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   submitLogin() {
+
     this.MyData = {
       name: this.name,
       sirname: this.sirname,
@@ -43,7 +55,11 @@ export class HomeComponent implements OnInit {
     this.loginService.sendToFirebase(this.MyData).then(data => {
       console.log('TCL: HomeComponent -> submitLogin -> data', data);
     });
-
   }
 
+  login() {
+    // this.router.navigate(['login']);
+    this.modalRef = this.loginModalService.open();
+
+  }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './modules/material.module';
 import { HomeComponent } from './webapp/layout/home/home.component';
@@ -18,6 +18,16 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedComponent } from './shared/shared/shared.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { LoginModalService } from './services/login-modal.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { MainHomeComponent } from './webapp/layout/main-home/main-home.component';
+library.add(fas, far);
 
 @NgModule({
   declarations: [
@@ -26,7 +36,8 @@ import { SharedComponent } from './shared/shared/shared.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    SharedComponent
+    SharedComponent,
+    MainHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -34,12 +45,16 @@ import { SharedComponent } from './shared/shared/shared.component';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule,
     FormsModule,
     HttpClientModule,
-    AngularFirestoreModule
+    BrowserAnimationsModule,
+    NgbModule,
+    FontAwesomeModule
 
   ],
-  providers: [LoginService, RegisterService],
+  providers: [LoginService, RegisterService, LoginModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
