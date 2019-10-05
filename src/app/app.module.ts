@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,13 +27,15 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { MainHomeComponent } from './webapp/layout/main-home/main-home.component';
-library.add(fas, far);
-import { registerLocaleData } from '@angular/common';
-import localeMr from '@angular/common/locales/mr';
-import localeMrExtra from '@angular/common/locales/extra/mr';
 import { TranslateService } from './services/translate.service';
-registerLocaleData(localeMr, localeMrExtra);
+import { TranslatePipe } from './pipes/translate.pipe';
+library.add(fas, far);
 
+export function setupTranslateFactory(
+  // tslint:disable-next-line:ban-types
+  service: TranslateService): Function {
+  return () => service.use('en');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ registerLocaleData(localeMr, localeMrExtra);
     LoginComponent,
     RegisterComponent,
     SharedComponent,
-    MainHomeComponent
+    MainHomeComponent,
+    TranslatePipe
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,14 @@ registerLocaleData(localeMr, localeMrExtra);
     FontAwesomeModule
 
   ],
-  providers: [LoginService, RegisterService, LoginModalService, TranslateService],
+  providers: [LoginService, RegisterService, LoginModalService, TranslateService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: setupTranslateFactory,
+      deps: [TranslateService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

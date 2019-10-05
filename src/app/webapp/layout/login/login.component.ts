@@ -41,32 +41,32 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   login() {
     this.credentials = {
-        username: this.username,
-        password: this.password,
-        rememberMe: this.rememberMe
+      username: this.username,
+      password: this.password,
+      rememberMe: this.rememberMe
     };
     this.authService.doEmailLogin(this.credentials)
-    .then(response => {
+      .then(response => {
         this.account = response;
         this.authenticationError = false;
         this.tellProject(this.account.user.uid);
         this.activeModal.dismiss('login success');
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         this.authenticationError = true;
-          // Handle Errors here.
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          if (errorCode === 'auth/wrong-password') {
-            alert('Wrong password.');
-          } else
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else
           if (errorCode === 'auth/invalid-email') {
             alert('Wrong email.');
           } else {
             alert(errorMessage);
           }
-    });
-}
+      });
+  }
 
   cancel() {
     this.credentials = {

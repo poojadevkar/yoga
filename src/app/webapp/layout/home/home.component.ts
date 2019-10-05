@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   sirname: string;
   color: string;
 
+  locale: any;
+
   public MyData: {
     name: string,
     sirname: string,
@@ -41,9 +43,15 @@ export class HomeComponent implements OnInit {
       console.log('TCL: HomeComponent -> constructor -> this.items', this.items);
     });
 
-    translateService.use('en').then(() => {
-      console.log(translateService.data);
-    });
+    // console.log(translateService.data);
+    this.locale = translateService.data;
+
+    if (!this.locale) {
+      translateService.use('en').then(data => {
+        // console.log(data);
+        this.locale = data;
+      });
+    }
   }
 
   ngOnInit() {

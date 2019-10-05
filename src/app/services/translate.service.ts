@@ -12,7 +12,7 @@ export class TranslateService {
   use(lang: string): Promise<{}> {
     return new Promise<{}>((resolve, reject) => {
       const langPath = `assets/i18n/${lang || 'en'}.json`;
-      console.log(langPath);
+      // console.log(langPath);
       // const path = `../../app/shared/locale/${lang || 'en'}.json`;
       // console.log(path);
       // this.http.get<{}>(path).subscribe();
