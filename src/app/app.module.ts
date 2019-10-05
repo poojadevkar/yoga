@@ -28,6 +28,11 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { MainHomeComponent } from './webapp/layout/main-home/main-home.component';
 library.add(fas, far);
+import { registerLocaleData } from '@angular/common';
+import localeMr from '@angular/common/locales/mr';
+import localeMrExtra from '@angular/common/locales/extra/mr';
+import { TranslateService } from './services/translate.service';
+registerLocaleData(localeMr, localeMrExtra);
 
 @NgModule({
   declarations: [
@@ -54,7 +59,7 @@ library.add(fas, far);
     FontAwesomeModule
 
   ],
-  providers: [LoginService, RegisterService, LoginModalService],
+  providers: [LoginService, RegisterService, LoginModalService, TranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

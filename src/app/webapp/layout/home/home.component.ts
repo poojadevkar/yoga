@@ -6,6 +6,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { LoginModalService } from 'src/app/services/login-modal.service';
+import { TranslateService } from 'src/app/services/translate.service';
 
 @Component({
   selector: 'app-home',
@@ -33,10 +34,15 @@ export class HomeComponent implements OnInit {
     db: AngularFirestore,
     private router: Router,
     private loginModalService: LoginModalService,
+    private translateService: TranslateService
   ) {
     db.collection('/names').valueChanges().subscribe(data => {
       this.items = data;
       console.log('TCL: HomeComponent -> constructor -> this.items', this.items);
+    });
+
+    translateService.use('en').then(() => {
+      console.log(translateService.data);
     });
   }
 
