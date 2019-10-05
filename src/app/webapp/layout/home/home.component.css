@@ -116,7 +116,19 @@
     animation: pp-benefit-tex1-anim 5s linear 2s infinite alternate;
   }
 
+  /* .site {
+    position: relative;
+  } */
   .btn-get-start {
-    position: absolute;
-    right: 40px;
+    position: fixed;
+    right: 5px;
+    top: 5px;
+  }
+
+  .pp-bgimg3 {
+    background-image: url("src/assets/images/yoga4.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
