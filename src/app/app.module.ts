@@ -30,6 +30,8 @@ import { MainHomeComponent } from './webapp/layout/main-home/main-home.component
 import { TranslateService } from './services/translate.service';
 import { TranslatePipe } from './pipes/translate.pipe';
 import { BmiComponent } from './webapp/main/bmi/bmi.component';
+import { HistoryComponent } from './webapp/main/history/history.component';
+import { BenefitComponent } from './webapp/main/benefit/benefit.component';
 library.add(fas, far);
 
 export function setupTranslateFactory(
@@ -47,7 +49,9 @@ export function setupTranslateFactory(
     SharedComponent,
     MainHomeComponent,
     TranslatePipe,
-    BmiComponent
+    BmiComponent,
+    HistoryComponent,
+    BenefitComponent
   ],
   imports: [
     BrowserModule,

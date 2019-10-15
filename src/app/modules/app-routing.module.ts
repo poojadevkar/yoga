@@ -4,12 +4,16 @@ import { HomeComponent } from '../webapp/layout/home/home.component';
 import { LoginComponent } from '../webapp/layout/login/login.component';
 import { MainHomeComponent } from '../webapp/layout/main-home/main-home.component';
 import { BmiComponent } from '../webapp/main/bmi/bmi.component';
+import { HistoryComponent } from '../webapp/main/history/history.component';
+import { BenefitComponent } from '../webapp/main/benefit/benefit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'main-home', component: MainHomeComponent },
   { path: 'bmi', component: BmiComponent },
+  { path: 'history', component: HistoryComponent },
+  { path: 'benefit', component: BenefitComponent },
 ];
 
 @NgModule({

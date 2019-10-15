@@ -18,11 +18,11 @@ export class MainHomeComponent implements OnInit {
   gotoBMI() {
     this.router.navigate(['bmi']);
   }
-  two() {
-
+  gotoHistory() {
+    this.router.navigate(['history']);
   }
-  three() {
-
+  gotoBenefit() {
+    this.router.navigate(['benefit']);
   }
   four() {
 
