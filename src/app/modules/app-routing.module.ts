@@ -6,6 +6,7 @@ import { MainHomeComponent } from '../webapp/layout/main-home/main-home.componen
 import { BmiComponent } from '../webapp/main/bmi/bmi.component';
 import { HistoryComponent } from '../webapp/main/history/history.component';
 import { BenefitComponent } from '../webapp/main/benefit/benefit.component';
+import { WhyYogaComponent } from '../webapp/main/why-yoga/why-yoga.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'bmi', component: BmiComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'benefit', component: BenefitComponent },
+  { path: 'why-yoga', component: WhyYogaComponent },
 ];
 
 @NgModule({

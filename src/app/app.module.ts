@@ -32,6 +32,7 @@ import { TranslatePipe } from './pipes/translate.pipe';
 import { BmiComponent } from './webapp/main/bmi/bmi.component';
 import { HistoryComponent } from './webapp/main/history/history.component';
 import { BenefitComponent } from './webapp/main/benefit/benefit.component';
+import { WhyYogaComponent } from './webapp/main/why-yoga/why-yoga.component';
 library.add(fas, far);
 
 export function setupTranslateFactory(
@@ -51,7 +52,8 @@ export function setupTranslateFactory(
     TranslatePipe,
     BmiComponent,
     HistoryComponent,
-    BenefitComponent
+    BenefitComponent,
+    WhyYogaComponent
   ],
   imports: [
     BrowserModule,
