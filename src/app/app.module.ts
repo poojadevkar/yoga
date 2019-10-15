@@ -29,6 +29,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { MainHomeComponent } from './webapp/layout/main-home/main-home.component';
 import { TranslateService } from './services/translate.service';
 import { TranslatePipe } from './pipes/translate.pipe';
+import { BmiComponent } from './webapp/main/bmi/bmi.component';
 library.add(fas, far);
 
 export function setupTranslateFactory(
@@ -45,7 +46,8 @@ export function setupTranslateFactory(
     RegisterComponent,
     SharedComponent,
     MainHomeComponent,
-    TranslatePipe
+    TranslatePipe,
+    BmiComponent
   ],
   imports: [
     BrowserModule,

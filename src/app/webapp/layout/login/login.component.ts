@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   username: string;
   credentials: any;
   account: any;
+  prod = false;
 
   constructor(
     private renderer: Renderer,
@@ -45,27 +46,33 @@ export class LoginComponent implements OnInit, AfterViewInit {
       password: this.password,
       rememberMe: this.rememberMe
     };
-    this.authService.doEmailLogin(this.credentials)
-      .then(response => {
-        this.account = response;
-        this.authenticationError = false;
-        this.tellProject(this.account.user.uid);
-        this.activeModal.dismiss('login success');
-      })
-      .catch(error => {
-        this.authenticationError = true;
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
-        } else
-          if (errorCode === 'auth/invalid-email') {
-            alert('Wrong email.');
-          } else {
-            alert(errorMessage);
-          }
-      });
+
+    if (!this.prod) {
+      this.gotoLandingScreen();
+      this.cancel();
+    } else {
+      this.authService.doEmailLogin(this.credentials)
+        .then(response => {
+          this.account = response;
+          this.authenticationError = false;
+          this.tellProject(this.account.user.uid);
+          this.activeModal.dismiss('login success');
+        })
+        .catch(error => {
+          this.authenticationError = true;
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else
+            if (errorCode === 'auth/invalid-email') {
+              alert('Wrong email.');
+            } else {
+              alert(errorMessage);
+            }
+        });
+    }
   }
 
   cancel() {
@@ -92,7 +99,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.loginService.googleLogin().then(data => {
       console.log('Pratik Output: LoginComponent -> googleLogin -> data', data);
       this.activeModal.dismiss('login success');
-      this.router.navigate(['main-home']);
+      this.gotoLandingScreen();
     });
   }
 
@@ -110,6 +117,10 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
   tellProject(uid) {
     this.accountService.account.next(uid);
+  }
+
+  gotoLandingScreen() {
+    this.router.navigate(['main-home']);
   }
 
 }

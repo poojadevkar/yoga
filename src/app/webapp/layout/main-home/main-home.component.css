@@ -9,9 +9,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-
-  .caption {
+}
+.caption {
     position: absolute;
     left: 0;
     top: 50%;
