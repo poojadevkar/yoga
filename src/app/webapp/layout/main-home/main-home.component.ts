@@ -27,8 +27,12 @@ export class MainHomeComponent implements OnInit {
   gotoWhyYoga() {
     this.router.navigate(['why-yoga']);
   }
-  five() {
+  gotoYogaclass() {
+    this.router.navigate(['yogaclass']);
+  }
 
+  gotolearnYoga() {
+    this.router.navigate(['learnyoga']);
   }
   six() {
 
