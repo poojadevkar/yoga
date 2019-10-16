@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   ) {
     db.collection('/names').valueChanges().subscribe(data => {
       this.items = data;
-      console.log('TCL: HomeComponent -> constructor -> this.items', this.items);
+      // console.log('TCL: HomeComponent -> constructor -> this.items', this.items);
     });
 
     // console.log(translateService.data);
@@ -48,12 +48,12 @@ export class HomeComponent implements OnInit {
 
     if (!this.locale) {
       translateService.use('en').then(data => {
-        // console.log(data);
         this.locale = data;
       });
     }
+    // console.log(this.locale);
   }
-
+  
   ngOnInit() {
 
   }
