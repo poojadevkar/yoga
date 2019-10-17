@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   username: string;
   credentials: any;
   account: any;
-  prod = true;
+  prod = false;
 
   constructor(
     private renderer: Renderer,
