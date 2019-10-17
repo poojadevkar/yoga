@@ -1,3 +1,6 @@
 {
-    "TITLE": "Everybody needs yoga"
+    "home": {
+        "openingText": "Everybody needs yoga",
+        "openingSubText": "Nature never lies to you"
+    }
 }
