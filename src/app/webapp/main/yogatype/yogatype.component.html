@@ -1,0 +1,36 @@
+
+<div class="bg">
+    <div class="caption">
+        <h1> Diangosans </h1> <br>
+    </div>
+
+<form>
+<mat-form-field>
+    <mat-select placeholder="Select type" [(ngModel)]="selectedValue" name="data">
+      <mat-option *ngFor="let data of type" [value]="data.poses">
+        {{data.name}}
+      </mat-option>
+
+</mat-select>
+</mat-form-field>
+
+
+      <!--mat-option *ngFor="let data of type" [value]="data.gototype()">
+         {{data.name}}
+
+
+
+        </mat-option>
+
+    </mat-select>
+  </mat-form-field-->
+
+  <p>selected type : {{selectedValue}}
+      <button mat-raised-button color="accent" (click)="gototype()"> ok</button>
+  </p>
+
+</form>
+
+</div>
+
+

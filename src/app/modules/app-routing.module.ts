@@ -9,6 +9,11 @@ import { BenefitComponent } from '../webapp/main/benefit/benefit.component';
 import { WhyYogaComponent } from '../webapp/main/why-yoga/why-yoga.component';
 import { YogaclassComponent } from '../webapp/main/yogaclass/yogaclass.component';
 import { LearnyogaComponent } from '../webapp/main/learnyoga/learnyoga.component';
+import { YogatypeComponent } from '../webapp/main/yogatype/yogatype.component';
+import { DaitComponent } from '../webapp/main/dait/dait.component';
+import { Type1Component } from '../webapp/main/yogatype/type1/type1.component';
+import { AfteryogaComponent } from '../webapp/main/dait/afteryoga/afteryoga.component';
+import { BeforeyogaComponent } from '../webapp/main/dait/beforeyoga/beforeyoga.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +25,13 @@ const routes: Routes = [
   { path: 'why-yoga', component: WhyYogaComponent },
   { path: 'yogaclass', component: YogaclassComponent },
   { path: 'learnyoga', component: LearnyogaComponent },
+  { path: 'yogatype', component: YogatypeComponent },
+  { path: 'dait', component: DaitComponent },
+  { path: 'type1', component: Type1Component },
+  { path: 'afteryoga', component: AfteryogaComponent },
+  { path: 'beforeyoga', component: BeforeyogaComponent },
+
+
 
 
 ];

@@ -4,21 +4,21 @@ import { LoginComponent } from '../webapp/layout/login/login.component';
 
 @Injectable({ providedIn: 'root' })
 export class LoginModalService {
-    private isOpen = false;
+    private isOpen = false;//false
     constructor(private modalService: NgbModal) { }
 
     open(): NgbModalRef {
         if (this.isOpen) {
             return;
         }
-        this.isOpen = true;
+        this.isOpen = false//false
         const modalRef = this.modalService.open(LoginComponent);
         modalRef.result.then(
             result => {
-                this.isOpen = false;
+                this.isOpen = false;//false
             },
             reason => {
-                this.isOpen = false;
+                this.isOpen = false;//false
             }
         );
         return modalRef;

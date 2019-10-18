@@ -1,26 +1,6 @@
-/*.bg {
-    /* The image used
-    background-image: url("src/assets/images/yoga12.jpg");
-
-    /* Full height
-    height: 100%;
-
-    /* Center and scale the image nicely
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.caption {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 100%;
-    text-align: center;
-    color: #000;
-}*/
 .bg {
     /* The image used */
-    background-image: url("src/assets/images/yoga14.jpg");
+    background-image: url("src/assets/images/yoga3.jpg");
 
     /* Full height */
     height: 100%;
@@ -46,4 +26,3 @@
     font-size: 25px;
     letter-spacing: 10px;
 }
-

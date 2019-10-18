@@ -1,9 +1,27 @@
+
+
+
+
+
+
+
+
+
+
 .bg-history {
-    background-image: url("src/assets/images/bg-history.png");
+    background-image: url("src/assets/images/yoga13.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
 }
 
 h3 {

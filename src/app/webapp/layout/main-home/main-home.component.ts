@@ -34,12 +34,13 @@ export class MainHomeComponent implements OnInit {
   gotolearnYoga() {
     this.router.navigate(['learnyoga']);
   }
-  six() {
-
+  gotoYogatype() {
+    this.router.navigate(['yogatype']);
   }
-  seven() {
-
+  gotoDait() {
+    this.router.navigate(['dait']);
   }
+
   eight() {
 
   }
