@@ -14,6 +14,10 @@ import { DaitComponent } from '../webapp/main/dait/dait.component';
 import { Type1Component } from '../webapp/main/yogatype/type1/type1.component';
 import { AfteryogaComponent } from '../webapp/main/dait/afteryoga/afteryoga.component';
 import { BeforeyogaComponent } from '../webapp/main/dait/beforeyoga/beforeyoga.component';
+import { OnlineComponent } from '../webapp/main/yogaclass/online/online.component';
+import { FreeclassesComponent } from '../webapp/main/yogaclass/freeclasses/freeclasses.component';
+import { SearchComponent } from '../webapp/main/yogaclass/search/search.component';
+import { ContactsComponent } from '../webapp/main/yogaclass/contacts/contacts.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +34,12 @@ const routes: Routes = [
   { path: 'type1', component: Type1Component },
   { path: 'afteryoga', component: AfteryogaComponent },
   { path: 'beforeyoga', component: BeforeyogaComponent },
+  { path: 'online', component: OnlineComponent },
+  { path: 'free', component: FreeclassesComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'contacts', component: ContactsComponent },
+
+
 
 
 

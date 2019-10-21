@@ -42,6 +42,10 @@ import { DaitComponent } from './webapp/main/dait/dait.component';
 import { Type1Component } from './webapp/main/yogatype/type1/type1.component';
 import { AfteryogaComponent } from './webapp/main/dait/afteryoga/afteryoga.component';
 import { BeforeyogaComponent } from './webapp/main/dait/beforeyoga/beforeyoga.component';
+import { OnlineComponent } from './webapp/main/yogaclass/online/online.component';
+import { SearchComponent } from './webapp/main/yogaclass/search/search.component';
+import { FreeclassesComponent } from './webapp/main/yogaclass/freeclasses/freeclasses.component';
+import { ContactsComponent } from './webapp/main/yogaclass/contacts/contacts.component';
 library.add(fas, far);
 
 export function setupTranslateFactory(
@@ -69,7 +73,11 @@ export function setupTranslateFactory(
     DaitComponent,
     Type1Component,
     AfteryogaComponent,
-    BeforeyogaComponent
+    BeforeyogaComponent,
+    OnlineComponent,
+    SearchComponent,
+    FreeclassesComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

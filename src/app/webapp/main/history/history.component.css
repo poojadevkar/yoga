@@ -15,6 +15,13 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.bg-history1 {
+    background-image: url("src/assets/images/yoga11.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .caption {
     position: absolute;
     left: 0;
