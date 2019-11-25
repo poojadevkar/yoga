@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bmi',
@@ -13,11 +14,21 @@ export class BmiComponent implements OnInit {
   weightunits: any;
   totalBMI: any;
   comment: any;
+  underweight: any;
+  normal: any;
+  obese:any;
+  overweight: any;
+  BMI:any;
+  constructor(
+    private router: Router
+  ) { }
 
-  constructor() { }
+
+
 
   ngOnInit() {
     this.totalBMI = 0;
+
   }
 
   computeBMI() {
@@ -41,7 +52,12 @@ export class BmiComponent implements OnInit {
 
     // var output = Math.round(BMI * 100) / 100
     if (BMI < 18.5) {
-      this.comment = 'Underweight';
+      this.comment = 'Underweight'
+
+
+          //this.gotounderweight();
+
+
     } else if (BMI >= 18.5 && BMI <= 25) {
       this.comment = 'Normal';
     } else if (BMI >= 25 && BMI <= 30) {
@@ -50,5 +66,24 @@ export class BmiComponent implements OnInit {
       this.comment = 'Overweight';
     }
   }
+  goto()
+  {
 
-}
+  this.router.navigate(['underweight']);}
+
+
+    /*if(this.comment===this.normal){
+    this.router.navigate(['normal']);
+  }
+  if(this.comment=== this.obese){
+
+    this.router.navigate(['obese']);
+  }
+  if(this.comment=== this.overweight){
+
+    this.router.navigate(['overweight']);
+  }*/
+
+
+  }
+

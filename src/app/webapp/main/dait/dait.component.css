@@ -12,8 +12,8 @@
 }
 .caption {
     position: absolute;
-    left: 0;
-    top: 50%;
+    left: 100;
+    top: 0;
     width: 100%;
     text-align: center;
     color: #000;

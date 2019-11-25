@@ -12,4 +12,6 @@ export class Type1Component implements OnInit {
   ngOnInit() {
   }
 
+
+
 }

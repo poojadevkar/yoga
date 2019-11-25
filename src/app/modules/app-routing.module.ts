@@ -18,9 +18,12 @@ import { OnlineComponent } from '../webapp/main/yogaclass/online/online.componen
 import { FreeclassesComponent } from '../webapp/main/yogaclass/freeclasses/freeclasses.component';
 import { SearchComponent } from '../webapp/main/yogaclass/search/search.component';
 import { ContactsComponent } from '../webapp/main/yogaclass/contacts/contacts.component';
+import { UnderweightComponent } from '../webapp/main/bmi/underweight/underweight.component';
+import { getMatTooltipInvalidPositionError } from '@angular/material';
+
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'main-home', component: MainHomeComponent },
   { path: 'bmi', component: BmiComponent },
@@ -38,6 +41,8 @@ const routes: Routes = [
   { path: 'free', component: FreeclassesComponent },
   { path: 'search', component: SearchComponent },
   { path: 'contacts', component: ContactsComponent },
+  { path: 'underweight', component: UnderweightComponent },
+
 
 
 

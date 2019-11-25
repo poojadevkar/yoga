@@ -23,10 +23,21 @@ export class YogatypeComponent implements OnInit
         this.router.navigate(['ok']);
       },
     ];*/
+    constructor(
+      private router: Router
+    ) { }
+
+
+      ngOnInit() {
+      }
+
+
+
+
 
 
   type=[
-      {name: 'leg Raise',poses:20},
+      {name: 'leg raise',poses:20},
       {name: 'Basic Breathing (Pranayama)',poses:20},
       {name:'The Plough (Hala Asana)',poses:20},
       {name:'The Shoulder Stand (Sarvang Asana)',poses:20},
@@ -63,14 +74,11 @@ export class YogatypeComponent implements OnInit
     ];
   selectedValue:string;
 
+   gototype1()
+   {
+     this.router.navigate(['type1']);
+   }
 
-  constructor(
-    private router: Router
-  ) { }
-
-
-    ngOnInit() {
-    }
 
 
 

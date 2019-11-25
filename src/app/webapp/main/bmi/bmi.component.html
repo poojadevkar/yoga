@@ -1,7 +1,5 @@
 <div class="bg">
-    <div class="caption">
-        <h1> Diangosans Enlightenment </h1> <br>
-     </div>
+
 <div>
 <!--body-->
 <div>
@@ -48,7 +46,12 @@
 
         <h1>Your BMI is: <span id="output"> {{ totalBMI }} </span></h1>
 
-        <h2>This means you are: <span id="comment"> {{ comment }} </span> </h2>
+        <h2>This means you are: <!--button mat-raised-button color="accent"  id="comment"-->
+            <span id="comment"> {{ comment }} </span>
+                <button mat-raised-button color="accent" (click)="goto()">{{comment}}
+
+            </button>
+ </h2>
 </div>
     <!--/body-->
 

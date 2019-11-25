@@ -46,6 +46,8 @@ import { OnlineComponent } from './webapp/main/yogaclass/online/online.component
 import { SearchComponent } from './webapp/main/yogaclass/search/search.component';
 import { FreeclassesComponent } from './webapp/main/yogaclass/freeclasses/freeclasses.component';
 import { ContactsComponent } from './webapp/main/yogaclass/contacts/contacts.component';
+import { UnderweightComponent } from './webapp/main/bmi/underweight/underweight.component';
+
 library.add(fas, far);
 
 export function setupTranslateFactory(
@@ -77,7 +79,9 @@ export function setupTranslateFactory(
     OnlineComponent,
     SearchComponent,
     FreeclassesComponent,
-    ContactsComponent
+    ContactsComponent,
+    UnderweightComponent,
+
   ],
   imports: [
     BrowserModule,

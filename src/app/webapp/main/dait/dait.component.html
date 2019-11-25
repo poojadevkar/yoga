@@ -1,26 +1,61 @@
 <div class="bg">
-    <div class="caption">
+
+        <div class="caption">
 
 
-<div class="container">
-        <div class="row">
-            <div class="col-md-1">
+
+                <div style="text-align:center">
+                  <button (click)="playPause()">Play/Pause</button>
+                  <button onclick="makeBig()">Big</button>
+                  <button onclick="makeSmall()">Small</button>
+                  <button onclick="makeNormal()">Normal</button>
+                  <br><br>
+                <video width="200"  id="video1" controls>
+                <source src="assets/images/VID-20191124-WA0001.mp4 " type="video/mp4">
+                <source src="assets/images/VID-20191124-WA0001.mp4  " type="video/ogg">
+                Your browser does not support HTML5 video.
+              </video>
+
+              <p>
+
+              <a href="http://www.eatingwell.com/article/283013/5-ways-to-help-your-diet-become-a-way-of-life/" target="_blank">every day diet plan</a>.
+              </p>
+            </div>
+        </div>
+        </div>
+
+          <div class="caption">
+        <div  class="row" >
+            <div  class="col-md-1">
                 <button mat-raised-button color="accent" (click)="gotoafteryoga()"> After yoga </button>
             </div>
             <br>
             <div class="col-md-1">
                 <button mat-raised-button color="primary" (click)="gotobeforeyoga()"> Before yoga </button>
-
-
-
-
-
-
-
             </div>
         </div>
-    </div>
-    </div>
-    </div>
+        </div>
+
+
+
+
+
+
+
+    <!--br><br><br>
+
+    <br><br><br>
+
+        <video width="200" controls>
+                <source src="assets/images/vdo.mp4 " type="video/mp4">
+                <source src="assets/images/vdo.ogg " type="video/ogg">
+                Your browser does not support HTML5 video.
+              </video>
+
+              <p>
+              Video courtesy of
+              <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+              </p-->
+
 
 

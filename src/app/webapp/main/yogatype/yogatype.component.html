@@ -1,4 +1,3 @@
-
 <div class="bg">
     <div class="caption">
         <h1> Diangosans </h1> <br>
@@ -6,15 +5,15 @@
 
 <form>
 <mat-form-field>
-    <mat-select placeholder="Select type" [(ngModel)]="selectedValue" name="data">
-      <mat-option *ngFor="let data of type" [value]="data.poses">
+    <mat-select placeholder="Select type" [(ngModel)]="selectedValue" name="data"   >
+      <mat-option *ngFor="let data of type" [value]="data.poses" >
         {{data.name}}
       </mat-option>
 
-</mat-select>
-</mat-form-field>
+    </mat-select>
+    </mat-form-field>
 
-
+    </form>
       <!--mat-option *ngFor="let data of type" [value]="data.gototype()">
          {{data.name}}
 
@@ -22,15 +21,15 @@
 
         </mat-option>
 
-    </mat-select>
-  </mat-form-field-->
+    </mat-select-->
+
 
   <p>selected type : {{selectedValue}}
-      <button mat-raised-button color="accent" (click)="gototype()"> ok</button>
+      <button mat-raised-button color="accent" (click)="gototype1()"> ok</button>
   </p>
 
-</form>
 
 </div>
+
 
 
