@@ -10,7 +10,8 @@ export class MainHomeComponent implements OnInit {
 
   constructor(
     private router: Router
-  ) { }
+
+) { }
 
   ngOnInit() {
   }

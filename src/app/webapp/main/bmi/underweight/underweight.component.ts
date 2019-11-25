@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-underweight',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnderweightComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+
+  ) { }
 
   ngOnInit() {
   }
+  gotounderweight1()
+  {
 
+  this.router.navigate(['underweight1']);}
+  gotonormal()
+  {
+
+  this.router.navigate(['normal']);}
+  gotoObese()
+  {
+
+  this.router.navigate(['obese']);}
+  gotooverweight()
+  {
+
+  this.router.navigate(['overweight']);}
 }

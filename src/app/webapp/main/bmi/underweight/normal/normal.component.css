@@ -1,0 +1,18 @@
+.caption {
+    position: absolute;
+    left: 100;
+
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+.caption1{
+    position: absolute;
+    left: 0;
+
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: rgb(26, 218, 231);
+  }

@@ -30,12 +30,6 @@ export class YogatypeComponent implements OnInit
 
       ngOnInit() {
       }
-
-
-
-
-
-
   type=[
       {name: 'leg raise',poses:20},
       {name: 'Basic Breathing (Pranayama)',poses:20},

@@ -19,6 +19,11 @@ import { FreeclassesComponent } from '../webapp/main/yogaclass/freeclasses/freec
 import { SearchComponent } from '../webapp/main/yogaclass/search/search.component';
 import { ContactsComponent } from '../webapp/main/yogaclass/contacts/contacts.component';
 import { UnderweightComponent } from '../webapp/main/bmi/underweight/underweight.component';
+import { Underweight1Component } from '../webapp/main/bmi/underweight/underweight1/underweight1.component';
+import { NormalComponent } from '../webapp/main/bmi/underweight/normal/normal.component';
+import { ObeseComponent } from '../webapp/main/bmi/underweight/obese/obese.component';
+import { OverweightComponent } from '../webapp/main/bmi/underweight/overweight/overweight.component';
+
 import { getMatTooltipInvalidPositionError } from '@angular/material';
 
 
@@ -42,6 +47,10 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'underweight', component: UnderweightComponent },
+  { path: 'underweight1', component: Underweight1Component },
+  { path: 'normal', component: NormalComponent },
+  { path: 'obese', component: ObeseComponent },
+  { path: 'overweight', component: OverweightComponent },
 
 
 
