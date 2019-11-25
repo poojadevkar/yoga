@@ -47,6 +47,10 @@ import { SearchComponent } from './webapp/main/yogaclass/search/search.component
 import { FreeclassesComponent } from './webapp/main/yogaclass/freeclasses/freeclasses.component';
 import { ContactsComponent } from './webapp/main/yogaclass/contacts/contacts.component';
 import { UnderweightComponent } from './webapp/main/bmi/underweight/underweight.component';
+import { NormalComponent } from './webapp/main/bmi/underweight/normal/normal.component';
+import { Underweight1Component } from './webapp/main/bmi/underweight/underweight1/underweight1.component';
+import { ObeseComponent } from './webapp/main/bmi/underweight/obese/obese.component';
+import { OverweightComponent } from './webapp/main/bmi/underweight/overweight/overweight.component';
 
 library.add(fas, far);
 
@@ -81,6 +85,10 @@ export function setupTranslateFactory(
     FreeclassesComponent,
     ContactsComponent,
     UnderweightComponent,
+    NormalComponent,
+    Underweight1Component,
+    ObeseComponent,
+    OverweightComponent,
 
   ],
   imports: [
