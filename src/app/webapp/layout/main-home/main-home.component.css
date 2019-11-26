@@ -13,7 +13,6 @@
 .caption {
     position: absolute;
     left: 100;
-
     top: 10%;
     width: 100%;
     text-align: center;
@@ -22,7 +21,6 @@
 .caption1{
     position: absolute;
     left: 100;
-
     top: 50%;
     width: 100%;
     text-align: center;
